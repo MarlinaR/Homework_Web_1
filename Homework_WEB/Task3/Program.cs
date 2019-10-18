@@ -19,9 +19,7 @@ namespace Task3
                 array[i] = rand.Next(min, max);
                 Console.Write(array[i]);
                 Console.Write(' ');
-            }
-                
-
+            }   
         }
     }
 }
