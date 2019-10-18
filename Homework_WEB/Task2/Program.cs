@@ -7,33 +7,38 @@ namespace Task2
         static void Main(string[] args)
         {
             double a, b, c = 0;
-
-            Console.WriteLine("Введите знак операции");
-            char str = TryChar();
-
-            Console.WriteLine("Введите два числа");
-            a = TryNum();
-            b = TryNum();
-
-            if (str == '+') c = a + b;
-            switch (str)
+            string flag_continue = "";
+            while (flag_continue != "exit")
             {
-                case '+':
-                    c = a + b;
-                    break;
-                case '-':
-                    c = a - b;
-                    break;
-                case '/':
-                    if (b == 0) Console.WriteLine("Ошибка в исполнении: Деление на ноль");
-                    else
-                        c = a / b;
-                    break;
-                case '*':
-                    c = a * b;
-                    break;
+                Console.WriteLine("Введите знак операции");
+                char str = TryChar();
+
+                Console.WriteLine("Введите два числа");
+                a = TryNum();
+                b = TryNum();
+
+                if (str == '+') c = a + b;
+                switch (str)
+                {
+                    case '+':
+                        c = a + b;
+                        break;
+                    case '-':
+                        c = a - b;
+                        break;
+                    case '/':
+                        if (b == 0) Console.WriteLine("Ошибка в исполнении: Деление на ноль");
+                        else
+                            c = a / b;
+                        break;
+                    case '*':
+                        c = a * b;
+                        break;
+                }
+                Console.WriteLine(c);
+                Console.WriteLine("Хотите завершить выполнение программы ? Введите - exit");
+                flag_continue = Console.ReadLine();
             }
-            Console.WriteLine(c);
         }
         static double TryNum()
         {
