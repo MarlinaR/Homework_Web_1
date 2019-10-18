@@ -6,46 +6,32 @@ namespace Task2
     {
         static void Main(string[] args)
         {
-            bool flag_success = false;
-            double a = 0, b = 0, c = 0;
+            double a, b, c = 0;
+
+            Console.WriteLine("Введите знак операции");
+            char str = TryChar();
 
             Console.WriteLine("Введите два числа");
-
             a = TryNum();
             b = TryNum();
 
-            flag_success = false;
-            while (!flag_success)
+            if (str == '+') c = a + b;
+            switch (str)
             {
-                Console.WriteLine("Введите знак операции");
-                char str = Convert.ToChar(Console.ReadLine());
-                if (str == '+') c = a + b;
-                switch (str)
-                {
-                    case '+':
-                        c = a + b;
-                        flag_success = true;
-                        break;
-                    case '-':
-                        c = a - b;
-                        flag_success = true;
-                        break;
-                    case '/':
-                        if (b == 0) Console.WriteLine("Ошибка в исполнении: Деление на ноль");
-                        else
-                        {
-                            c = a / b;
-                        }
-                        flag_success = true;
-                        break;
-                    case '*':
-                        c = a * b;
-                        flag_success = true;
-                        break;
-                    default:
-                        Console.WriteLine("Неверный знак операции. Повторите попытку (-,+,/,*)");
-                        break;
-                }
+                case '+':
+                    c = a + b;
+                    break;
+                case '-':
+                    c = a - b;
+                    break;
+                case '/':
+                    if (b == 0) Console.WriteLine("Ошибка в исполнении: Деление на ноль");
+                    else
+                        c = a / b;
+                    break;
+                case '*':
+                    c = a * b;
+                    break;
             }
             Console.WriteLine(c);
         }
@@ -62,7 +48,20 @@ namespace Task2
                 else flag_success = true;
             }
             return a;
-        
+        }        
+        static char TryChar()
+        {
+            string str_s;
+            char s = ' ';
+            bool flag_success = false;
+            while (!flag_success)
+            {
+                str_s = Console.ReadLine();
+                if (!char.TryParse(str_s, out s) || (str_s != "+" && str_s != "-" && str_s != "*" && str_s != "/"))
+                    Console.WriteLine("Неверный знак операции. Повторите попытку (-,+,/,*)");
+                else  flag_success = true;
+            }
+            return s;
         }
     }
 }
