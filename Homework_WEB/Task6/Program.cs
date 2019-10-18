@@ -13,7 +13,7 @@ namespace ConsoleApp1
                 double symbolToWordRatio;
                 string lastCharsWord = string.Empty;
 
-                for (int i = 1; i < str.Length; i++) //проверка последнего символа потом еще или как подумай
+                for (int i = 1; i < str.Length; i++) 
                 {
                     if (char.IsLetterOrDigit(str[i - 1]) == true)
                     {
@@ -51,10 +51,8 @@ namespace ConsoleApp1
             if (str == string.Empty)
             {
                 str = "Lorem Ipsum - это текст-\"рыба\", часто используемый в печати и вэб-дизайне";
-                Console.WriteLine("Тест - "+str+"\n");
             }
-
-
+            Console.WriteLine(str + "\n");
             getStringInfo.doTheThings(str);
 
         }
