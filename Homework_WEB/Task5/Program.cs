@@ -68,7 +68,7 @@ namespace FormulaAggregator
                 Console.Write("1) y = x * (2x - 1)^2 * (x + 3)^3\n");
                 Console.Write("2) y = sum(1 / ((k + 1) * (k + 2)), где k = 1 .. n\n");
                 Console.Write("3) y = ln ((sqrt(x^2 + 3) - 2*sqrt(x^2 + 1))/(x^2 + 9))\n");
-
+                Console.Write("\n");
                 int formulaId = -1;
                 while (formulaId < 0 || formulaId >= MAX_FORMULAS)
                 {
