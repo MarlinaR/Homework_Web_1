@@ -1,0 +1,28 @@
+﻿@model IEnumerable<project4.Models.Book>
+@{
+}
+<h3>Список книг</h3>
+
+<form method="get" action="/BookKind/BookKind/">
+    <input type="text" value="" name="text" />
+    <input type="submit" value="Поиск" />
+</form>
+<div>
+    <table width="100%" class="table-condensed">
+  
+        <tr>
+            <td>Название</td>
+            <td></td>
+        </tr>
+        @foreach (var book in Model) {
+
+            <tr>
+                <td>@book.Name</td>
+                <td><a href="~/BookKind/Edit/@book.ID">Редактировать</a></td>
+                <td><a href="~/BookKind/Delete/@book.ID">Удалить</a></td>
+                <td><a href="~/BookKind/Detail/@book.ID">Детали</a></td>
+            </tr>
+        }
+    </table>
+<p><a href="~/BookKind/Add/">Добавить</a></p>
+</div>

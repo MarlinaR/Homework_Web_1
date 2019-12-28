@@ -1,0 +1,28 @@
+﻿@model IEnumerable<project4.Models.Author>
+@{
+    ViewData["Title"] = "Список исполнителей";
+}
+
+<h1>Список исполнителей</h1>
+
+<form method="get" action="/Author/Author/">
+    <input type="text" value="" name="text" />
+    <input type="submit" value="Поиск" />
+</form>
+
+<table width="100%" class="table-condensed">
+    <tr>
+        <td>Имя</td>
+        <td></td>
+    </tr>
+    @foreach (var author in Model) {
+
+        <tr>
+            <td>@author.Name</td>
+            <td><a href="~/Author/Edit/@author.ID">Редактировать</a></td>
+            <td><a href="~/Author/Delete/@author.ID">Удалить</a></td>
+            <td><a href="~/Author/Detail/@author.ID">Детали</a></td>
+        </tr>
+    }
+</table>
+<p><a href="~/Author/Add/">Добавить</a></p>

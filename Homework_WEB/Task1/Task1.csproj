@@ -3,7 +3,7 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.0</TargetFramework>
     <FileUpgradeFlags>40</FileUpgradeFlags>
-    <UpgradeBackupLocation>C:\Users\Arina\Desktop\WEB\Homework_Web_1\Homework_WEB\Backup\Task1\</UpgradeBackupLocation>
-    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>C:\Users\Arina\Desktop\WEB\Homework_Web_1\Homework_WEB\Backup1\Task1\</UpgradeBackupLocation>
+    <OldToolsVersion>Current</OldToolsVersion>
   </PropertyGroup>
 </Project>
