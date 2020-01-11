@@ -1,0 +1,19 @@
+﻿@model FilterSortPagingApp.Models.Book
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>New book:</h2>
+
+@using (Html.BeginForm("Add", "Home", FormMethod.Post))
+{
+    <label asp-for="Name">Name</label><br/>
+    <input type="text" asp-for="Name"/><br/>
+    @Html.LabelFor(model => model.Type.Name, "Type")<br/>
+    @Html.EditorFor(model => model.Type.Name)<br/>
+    @Html.LabelFor(model => model.Price, "Price")<br/>
+    @Html.EditorFor(model => model.Price)<br/>
+    <br/>
+    <input type="submit" value="Add" />
+}
